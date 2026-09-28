@@ -1,1 +1,1687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
 
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>PARA DANITZA 💜</title>
+
+
+<style>
+
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#050507;
+
+    color:white;
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   FONDO
+========================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        circle at 20% 20%,
+        #7b2cbf45,
+        transparent 32%
+    ),
+
+    radial-gradient(
+        circle at 80% 80%,
+        #9d4edd30,
+        transparent 32%
+    ),
+
+    linear-gradient(
+        135deg,
+        #030304,
+        #100719,
+        #030304
+    );
+
+    z-index:-5;
+}
+
+
+/* =========================
+   ESTRELLAS
+========================= */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-3;
+
+    pointer-events:none;
+}
+
+.star{
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    background:white;
+
+    border-radius:50%;
+
+    opacity:.5;
+
+    animation:
+    brillar 3s infinite alternate;
+}
+
+@keyframes brillar{
+
+    from{
+
+        opacity:.15;
+
+        transform:scale(.5);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.3);
+    }
+}
+
+
+/* =========================
+   FLORES FLOTANTES
+========================= */
+
+.flower{
+
+    position:fixed;
+
+    bottom:-60px;
+
+    font-size:30px;
+
+    z-index:2;
+
+    pointer-events:none;
+
+    animation:
+    subir 12s linear infinite;
+}
+
+@keyframes subir{
+
+    0%{
+
+        transform:
+        translateY(0)
+        rotate(0deg);
+
+        opacity:0;
+    }
+
+    10%{
+
+        opacity:.8;
+    }
+
+    90%{
+
+        opacity:.8;
+    }
+
+    100%{
+
+        transform:
+        translateY(-115vh)
+        rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+section{
+
+    min-height:100vh;
+
+    padding:
+    60px 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.portada{
+
+    text-align:center;
+}
+
+.contenedor{
+
+    width:100%;
+
+    max-width:700px;
+
+    padding:
+    55px 30px;
+
+    border-radius:30px;
+
+    background:#ffffff08;
+
+    border:
+    1px solid #a855f744;
+
+    backdrop-filter:
+    blur(15px);
+
+    box-shadow:
+
+    0 0 50px #7b2cbf22,
+
+    inset 0 0 30px #ffffff05;
+}
+
+
+/* TEXTO PEQUEÑO */
+
+.pequeno{
+
+    text-transform:uppercase;
+
+    letter-spacing:5px;
+
+    font-size:12px;
+
+    color:#c084fc;
+
+    margin-bottom:20px;
+}
+
+
+/* NOMBRE */
+
+h1{
+
+    font-size:
+    clamp(50px,12vw,90px);
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #ffffff,
+        #d8b4fe,
+        #a855f7,
+        #ffffff
+    );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    animation:
+    brillo 5s linear infinite;
+}
+
+@keyframes brillo{
+
+    0%{
+
+        background-position:0%;
+    }
+
+    100%{
+
+        background-position:300%;
+    }
+}
+
+
+/* SUBTÍTULO */
+
+.subtitulo{
+
+    margin:
+    25px auto;
+
+    max-width:550px;
+
+    line-height:1.8;
+
+    color:#ccc;
+
+    font-size:18px;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+button{
+
+    border:none;
+
+    padding:
+    16px 30px;
+
+    border-radius:50px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #6a1bb1,
+        #a855f7
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 25px #7b2cbf66;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 40px #a855f7aa;
+}
+
+
+/* =========================
+   VENTANA / CARTA
+========================= */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+    rgba(0,0,0,.82);
+
+    backdrop-filter:
+    blur(8px);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    z-index:500;
+
+    opacity:0;
+
+    transition:
+    opacity .4s ease;
+}
+
+
+/* CUANDO SE ABRE */
+
+.modal.activo{
+
+    display:flex;
+
+    opacity:1;
+}
+
+
+/* TARJETA */
+
+.carta{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:650px;
+
+    max-height:88vh;
+
+    overflow-y:auto;
+
+    padding:
+    40px 28px 35px;
+
+    border-radius:28px;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        #17101f,
+        #0b080e
+    );
+
+    border:
+    1px solid #a855f777;
+
+    box-shadow:
+
+    0 0 80px #7b2cbf55,
+
+    inset
+    0 0 40px #ffffff05;
+
+    transform:
+    translateY(60px)
+    scale(.85);
+
+    transition:
+    transform .5s cubic-bezier(.2,.8,.2,1);
+
+    scrollbar-width:none;
+}
+
+.carta::-webkit-scrollbar{
+
+    display:none;
+}
+
+
+/* ANIMACIÓN DE LA CARTA */
+
+.modal.activo .carta{
+
+    transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* BOTÓN CERRAR */
+
+.cerrar{
+
+    position:absolute;
+
+    top:14px;
+
+    right:16px;
+
+    width:42px;
+
+    height:42px;
+
+    padding:0;
+
+    border-radius:50%;
+
+    background:#ffffff12;
+
+    border:
+    1px solid #ffffff20;
+
+    color:#fff;
+
+    font-size:20px;
+
+    box-shadow:none;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.cerrar:hover{
+
+    background:#a855f7;
+
+    transform:
+    rotate(90deg)
+    scale(1.1);
+}
+
+
+/* ICONO */
+
+.icono-carta{
+
+    text-align:center;
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+    animation:
+    flotar 2s infinite alternate;
+}
+
+@keyframes flotar{
+
+    from{
+
+        transform:
+        translateY(0);
+    }
+
+    to{
+
+        transform:
+        translateY(-8px);
+    }
+}
+
+
+/* TÍTULO DE CARTA */
+
+.carta h2{
+
+    text-align:center;
+
+    font-size:32px;
+
+    margin-bottom:8px;
+
+    color:#e9d5ff;
+}
+
+.carta .para{
+
+    text-align:center;
+
+    color:#a855f7;
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:30px;
+}
+
+
+/* TEXTO */
+
+.carta-contenido{
+
+    color:#eeeeee;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    text-align:left;
+}
+
+.carta-contenido p{
+
+    margin-bottom:20px;
+}
+
+
+/* TEXTO DESTACADO */
+
+.resaltado{
+
+    color:#d8b4fe;
+
+    font-weight:bold;
+}
+
+
+/* FIRMA */
+
+.firma-carta{
+
+    margin-top:30px;
+
+    padding-top:25px;
+
+    border-top:
+    1px solid #ffffff12;
+
+    text-align:right;
+
+    color:#c084fc;
+
+    font-style:italic;
+
+    font-size:18px;
+}
+
+
+/* =========================
+   SECCIONES INFERIORES
+========================= */
+
+.titulo{
+
+    text-align:center;
+
+    font-size:40px;
+
+    margin-bottom:25px;
+}
+
+.texto{
+
+    max-width:650px;
+
+    text-align:center;
+
+    color:#bbb;
+
+    line-height:1.9;
+
+    font-size:17px;
+}
+
+
+/* =========================
+   FLORES
+========================= */
+
+.flores{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-top:40px;
+}
+
+.flor{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:#ffffff08;
+
+    border:
+    1px solid #a855f744;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:55px;
+
+    transition:.4s;
+}
+
+.flor:hover{
+
+    transform:
+    translateY(-12px)
+    rotate(5deg);
+
+    box-shadow:
+    0 0 30px #a855f755;
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+.sobre{
+
+    text-align:center;
+}
+
+.sobre-icono{
+
+    font-size:80px;
+
+    margin-bottom:25px;
+
+    animation:
+    flotar 2s infinite alternate;
+}
+
+
+/* =========================
+   PREGUNTA
+========================= */
+
+.pregunta{
+
+    text-align:center;
+}
+
+.pregunta h2{
+
+    font-size:
+    clamp(38px,8vw,65px);
+
+    margin-bottom:25px;
+}
+
+.pregunta p{
+
+    color:#bbb;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+}
+
+
+/* =========================
+   CORAZONES
+========================= */
+
+.corazon{
+
+    position:fixed;
+
+    bottom:-30px;
+
+    font-size:22px;
+
+    pointer-events:none;
+
+    animation:
+    corazonArriba 5s linear forwards;
+
+    z-index:1000;
+}
+
+@keyframes corazonArriba{
+
+    0%{
+
+        transform:
+        translateY(0)
+        scale(.5);
+
+        opacity:0;
+    }
+
+    20%{
+
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+        translateY(-110vh)
+        scale(1.5)
+        rotate(25deg);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    color:#666;
+}
+
+.firma{
+
+    color:#a855f7;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media(max-width:500px){
+
+    .contenedor{
+
+        padding:
+        45px 20px;
+    }
+
+    h1{
+
+        font-size:55px;
+    }
+
+    .subtitulo{
+
+        font-size:16px;
+    }
+
+    .carta{
+
+        padding:
+        40px 22px 30px;
+
+        max-height:90vh;
+
+        border-radius:25px;
+    }
+
+    .carta h2{
+
+        font-size:27px;
+    }
+
+    .carta-contenido{
+
+        font-size:16px;
+
+        line-height:1.85;
+    }
+
+    .flor{
+
+        width:95px;
+
+        height:95px;
+
+        font-size:42px;
+    }
+
+}
+
+
+/* =========================
+   ANIMACIÓN DE ENTRADA
+========================= */
+
+@keyframes entrada{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(20px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     ESTRELLAS
+========================= -->
+
+<div
+class="stars"
+id="estrellas">
+</div>
+
+
+<!-- =========================
+     FLORES FLOTANTES
+========================= -->
+
+<div
+class="flower"
+style="left:5%;animation-delay:0s;">
+🌸
+</div>
+
+<div
+class="flower"
+style="left:20%;animation-delay:4s;">
+🌷
+</div>
+
+<div
+class="flower"
+style="left:40%;animation-delay:2s;">
+🌺
+</div>
+
+<div
+class="flower"
+style="left:60%;animation-delay:7s;">
+🌸
+</div>
+
+<div
+class="flower"
+style="left:80%;animation-delay:3s;">
+🌷
+</div>
+
+<div
+class="flower"
+style="left:92%;animation-delay:6s;">
+🌹
+</div>
+
+
+
+<!-- =========================
+     PORTADA
+========================= -->
+
+<section class="portada">
+
+<div class="contenedor">
+
+
+<div class="pequeno">
+
+Una pequeña cosa de Luis para...
+
+</div>
+
+
+<h1>
+
+DANITZA 💜
+
+</h1>
+
+
+<p class="subtitulo">
+
+No sé si después de esto
+me vas a creer un poquito más...
+
+<br>
+
+pero por lo menos
+espero sacarte una sonrisa.
+
+</p>
+
+
+<button
+onclick="abrirCarta()">
+
+Toca aquí 💌
+
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     VENTANA DE LA CARTA
+========================= -->
+
+<div
+class="modal"
+id="modalCarta">
+
+
+<div class="carta">
+
+
+<button
+class="cerrar"
+onclick="cerrarCarta()">
+
+×
+
+</button>
+
+
+<div class="icono-carta">
+
+💌
+
+</div>
+
+
+<h2>
+
+Para Danitza 💜
+
+</h2>
+
+
+<div class="para">
+
+De Luis
+
+</div>
+
+
+<div class="carta-contenido">
+
+
+<p>
+
+Bueno... Danitza. 💜
+
+</p>
+
+
+<p>
+
+Sé que tienes tu teoría de que
+<strong>"Luis es mentiroso"</strong> 😂.
+
+</p>
+
+
+<p>
+
+Y probablemente aunque te diga
+que esta vez estoy diciendo
+la verdad, vas a pensar:
+
+</p>
+
+
+<p
+class="resaltado"
+style="text-align:center;">
+
+"Sí, claro Luis..." 😏
+
+</p>
+
+
+<p>
+
+Pero hay algo que no necesito
+inventar:
+
+</p>
+
+
+<p
+class="resaltado"
+style="text-align:center;font-size:21px;">
+
+Me gusta hablar contigo.
+
+</p>
+
+
+<p>
+
+Me gusta cuando conversamos,
+cuando me haces reír,
+cuando me haces renegar
+un poquito y hasta cuando
+no me crees. 😂
+
+</p>
+
+
+<p>
+
+No quiero convencerte
+solamente con palabras bonitas.
+
+</p>
+
+
+<p>
+
+Prefiero que con el tiempo
+seas tú quien descubra
+si Luis realmente es tan
+mentiroso como dices.
+
+</p>
+
+
+<p>
+
+Porque quizá las palabras
+pueden decir cualquier cosa...
+
+</p>
+
+
+<p
+class="resaltado">
+
+pero los detalles,
+el tiempo y las acciones
+son otra historia.
+
+</p>
+
+
+<p>
+
+Y si esta página consigue
+sacarte aunque sea una
+pequeña sonrisa...
+
+</p>
+
+
+<p
+class="resaltado"
+style="text-align:center;font-size:19px;">
+
+ya valió la pena. 💜
+
+</p>
+
+
+<div class="firma-carta">
+
+Con cariño,
+
+<br>
+
+Luis 💜
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+     FLORES
+========================= -->
+
+<section>
+
+<div>
+
+
+<h2 class="titulo">
+
+Un detalle para ti 🌸
+
+</h2>
+
+
+<p class="texto">
+
+Como sé que te gustan las flores,
+te dejo algunas por aquí.
+
+<br><br>
+
+Aunque admito que unas de verdad
+serían mucho más bonitas. 🌷
+
+</p>
+
+
+<div class="flores">
+
+<div class="flor">
+🌸
+</div>
+
+<div class="flor">
+🌷
+</div>
+
+<div class="flor">
+🌹
+</div>
+
+<div class="flor">
+🌺
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CARIÑO
+========================= -->
+
+<section>
+
+<div>
+
+
+<h2 class="titulo">
+
+Un poquito de cariño 💜
+
+</h2>
+
+
+<p class="texto">
+
+No quiero hacer de esto
+una declaración exagerada.
+
+<br><br>
+
+Solo quería decirte que,
+entre tantas personas,
+hay alguien que poco a poco
+se ha vuelto especial para mí.
+
+<br><br>
+
+Y sí...
+
+<br><br>
+
+<span class="resaltado">
+
+eres tú, Danitza.
+
+</span>
+
+<br><br>
+
+Tal vez todavía no me creas.
+
+Tal vez sigas pensando
+que Luis está inventando
+todo esto. 😂
+
+<br><br>
+
+Pero tranquila...
+
+<br><br>
+
+<span class="resaltado">
+
+No tienes que creerme hoy.
+
+</span>
+
+<br><br>
+
+Solo dame la oportunidad
+de demostrártelo con hechos.
+
+</p>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CARTA FINAL
+========================= -->
+
+<section>
+
+<div class="sobre">
+
+
+<div class="sobre-icono">
+
+💌
+
+</div>
+
+
+<h2 class="titulo">
+
+Una última cosa...
+
+</h2>
+
+
+<p class="texto">
+
+Si algún día vuelves a decir:
+
+<br><br>
+
+<strong>
+
+"Luis, tú eres un mentiroso."
+
+</strong>
+
+<br><br>
+
+probablemente me voy
+a reír. 😂
+
+<br><br>
+
+Pero también voy a pensar:
+
+<br><br>
+
+<span class="resaltado">
+
+"Algún día voy a hacer
+que me crea."
+
+</span>
+
+<br><br>
+
+No con promesas.
+
+<br>
+
+Con detalles.
+
+<br>
+
+Con hechos.
+
+<br>
+
+Y con un poquito
+de cariño. 💜
+
+</p>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PREGUNTA FINAL
+========================= -->
+
+<section class="pregunta">
+
+<div>
+
+
+<h2>
+
+Entonces... 💜
+
+</h2>
+
+
+<p>
+
+Danitza...
+
+<br><br>
+
+después de todo esto...
+
+<br><br>
+
+¿me crees aunque sea
+un poquito?
+
+</p>
+
+
+<button
+onclick="respuestaSi()">
+
+Un poquito sí 💜
+
+</button>
+
+
+<button
+onclick="respuestaNo()"
+style="margin-left:10px;background:#18131d;">
+
+Todavía no 😏
+
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+Hecho por
+<span class="firma">
+Luis
+</span>
+💜
+
+<br><br>
+
+Para Danitza,
+que todavía no sabe
+si creerme. 😂
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================
+   CREAR ESTRELLAS
+========================= */
+
+const estrellas =
+document.getElementById("estrellas");
+
+
+for(let i=0;i<100;i++){
+
+    const estrella =
+    document.createElement("div");
+
+    estrella.className="star";
+
+    estrella.style.left =
+    Math.random()*100+"%";
+
+    estrella.style.top =
+    Math.random()*100+"%";
+
+    estrella.style.animationDelay =
+    Math.random()*4+"s";
+
+    estrellas.appendChild(
+        estrella
+    );
+
+}
+
+
+
+/* =========================
+   ABRIR CARTA
+========================= */
+
+function abrirCarta(){
+
+    const modal =
+    document.getElementById(
+        "modalCarta"
+    );
+
+    modal.style.display="flex";
+
+    setTimeout(()=>{
+
+        modal.classList.add(
+            "activo"
+        );
+
+    },20);
+
+    crearCorazones();
+
+    document.body.style.overflow="hidden";
+
+}
+
+
+
+/* =========================
+   CERRAR CARTA
+========================= */
+
+function cerrarCarta(){
+
+    const modal =
+    document.getElementById(
+        "modalCarta"
+    );
+
+    modal.classList.remove(
+        "activo"
+    );
+
+    setTimeout(()=>{
+
+        modal.style.display="none";
+
+    },400);
+
+    document.body.style.overflow="auto";
+
+}
+
+
+
+/* =========================
+   CERRAR TOCANDO AFUERA
+========================= */
+
+document
+.getElementById("modalCarta")
+.addEventListener(
+    "click",
+    function(e){
+
+        if(e.target === this){
+
+            cerrarCarta();
+
+        }
+
+    }
+);
+
+
+
+/* =========================
+   CERRAR CON ESC
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Escape"){
+
+            cerrarCarta();
+
+        }
+
+    }
+);
+
+
+
+/* =========================
+   CORAZONES
+========================= */
+
+function crearCorazones(){
+
+    for(let i=0;i<20;i++){
+
+        const corazon =
+        document.createElement(
+            "div"
+        );
+
+        corazon.className=
+        "corazon";
+
+        corazon.innerHTML =
+        Math.random()>0.5
+        ? "💜"
+        : "♡";
+
+        corazon.style.left =
+        Math.random()*100+"%";
+
+        corazon.style.animationDuration =
+        (4+Math.random()*3)+"s";
+
+        document.body.appendChild(
+            corazon
+        );
+
+        setTimeout(()=>{
+
+            corazon.remove();
+
+        },7000);
+
+    }
+
+}
+
+
+
+/* =========================
+   RESPUESTA SÍ
+========================= */
+
+function respuestaSi(){
+
+    crearCorazones();
+
+    setTimeout(()=>{
+
+        alert(
+        "Sabía que en el fondo me creías aunque sea un poquito 😂💜"
+        );
+
+    },500);
+
+}
+
+
+
+/* =========================
+   RESPUESTA NO
+========================= */
+
+function respuestaNo(){
+
+    crearCorazones();
+
+    setTimeout(()=>{
+
+        alert(
+        "Está bien... entonces me toca demostrártelo 😏💜"
+        );
+
+    },500);
+
+}
+
+</script>
+
+
+</body>
+
+  </html>
